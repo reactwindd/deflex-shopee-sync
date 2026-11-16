@@ -1,0 +1,13 @@
+{
+  "name": "deflex-shopee-sync",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shopee order → OBM POS cash sale sync (Firebird)",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "node-firebird": "^2.19.1"
+  }
+}

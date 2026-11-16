@@ -1,0 +1,25 @@
+{
+  "partnerId": "YOUR_SHOPEE_PARTNER_ID",
+  "partnerKey": "YOUR_SHOPEE_PARTNER_KEY",
+  "daysBack": 7,
+  "sellerCenterUrl": "https://seller.shopee.com.my/portal/sale/order/",
+  "adminPassword": "change-me",
+  "shops": [
+    {
+      "name": "shopee 1",
+      "shopId": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "customerPkey": 279,
+      "active": true
+    },
+    {
+      "name": "shopee sales2",
+      "shopId": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "customerPkey": 283,
+      "active": true
+    }
+  ]
+}

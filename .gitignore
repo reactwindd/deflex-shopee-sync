@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+web/node_modules/
+
+# Secrets — NEVER commit these
+config.json
+sessions.json
+sync-log.json
+
+# Legacy static UI (superseded by the React app in web/dist)
+public/
+
+# Build artifacts
+*.tsbuildinfo
+
+# Local logs / scratch
+*.log
+nohup.out
