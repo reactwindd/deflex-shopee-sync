@@ -88,8 +88,12 @@ the two never collide.
   `SALESINVOICE.GSTADD_NAME` (the *Additional Customer Name* field) or
   `REFERENCE`. This covers both sync-created and manually-entered orders.
 - **Concurrency-safe keys** — the primary key comes from OBM's own generator
-  `SALESINVOICE_KEYGEN` (`GEN_ID(..., 1)`), so syncing while the POS app is
-  running cannot collide or desynchronize the sequence.
+  `SALESINVOICE_KEYGEN` (`GEN_ID(..., 1)`), and the cash-sale number comes from
+  OBM's `NEXTTRANSNO` counter (`TABNAME='CASHSALES'`, formatted with
+  `REGISTRY.CA_FORMAT = %Y-CS%5X`). Both are advanced atomically, so syncing
+  while the POS app is running keeps the two in lockstep — manual counter
+  sales and synced Shopee sales never collide. The counter self-heals if it
+  falls behind (e.g. after a restore).
 - **Only `shopee 1` (279) and `shopee sales2` (283)** are synced; Shopee 3 and
   Lazada are intentionally excluded.
 
